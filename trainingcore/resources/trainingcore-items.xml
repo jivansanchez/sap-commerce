@@ -143,6 +143,57 @@
                         <defaultvalue></defaultvalue>
                     </attribute>
                 </attributes>
+                <indexes>
+                    <index name="NewsLetterOptions_idx">
+                        <key attribute="code"/>
+                    </index>
+                </indexes>
+            </itemtype>
+            <itemtype code="MobileAdditionalInfo" extends="GenericItem" autocreate="true" generate="true"
+                      jaloclass="de.hybris.training.core.jalo.CustomerStoreLogin">
+                <deployment table="MobileAdditionalInfo" typecode="11205"/>
+                <attributes>
+                    <attribute qualifier="code" type="java.lang.String">
+                        <modifiers unique="true" read="true" write="true" optional="false"/>
+                        <persistence type="property"/>
+                        <defaultvalue></defaultvalue>
+                    </attribute>
+                    <attribute qualifier="name" type="java.lang.String">
+                        <modifiers unique="true" read="true" write="true" optional="false"/>
+                        <persistence type="property"/>
+                        <defaultvalue></defaultvalue>
+                    </attribute>
+                    <attribute qualifier="description" type="java.lang.String">
+                        <modifiers unique="true" read="true" write="true" optional="false"/>
+                        <persistence type="property"/>
+                        <defaultvalue></defaultvalue>
+                    </attribute>
+                    <attribute qualifier="year" type="java.lang.String">
+                        <modifiers unique="true" read="true" write="true" optional="false"/>
+                        <persistence type="property"/>
+                        <defaultvalue></defaultvalue>
+                    </attribute>
+                    <attribute qualifier="isTouch" type="java.lang.Boolean">
+                        <modifiers unique="true" read="true" write="true" optional="false"/>
+                        <persistence type="property"/>
+                        <defaultvalue>Boolean.False</defaultvalue>
+                    </attribute>
+                    <attribute qualifier="factory" type="java.lang.String">
+                        <modifiers unique="true" read="true" write="true" optional="false"/>
+                        <persistence type="property"/>
+                        <defaultvalue>Boolean.False</defaultvalue>
+                    </attribute>
+                    <attribute qualifier="isSmart" type="java.lang.Boolean">
+                        <modifiers unique="true" read="true" write="true" optional="false"/>
+                        <persistence type="property"/>
+                        <defaultvalue>Boolean.False</defaultvalue>
+                    </attribute>
+                </attributes>
+                <indexes>
+                    <index name="MobileAdditionalInfo_IDX">
+                        <key attribute="code"/>
+                    </index>
+                </indexes>
             </itemtype>
         </typegroup>
 
