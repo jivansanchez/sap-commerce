@@ -554,7 +554,7 @@
 
 	<alias name="defaultNewsLetterDAO" alias="newsLetterDAO"/>
 	<bean id="defaultNewsLetterDAO" class="de.hybris.training.core.dao.impl.DefaultNewsLetterDAO">
-		<constructor-arg name="typecode" value="11201"/>
+		<constructor-arg name="typecode" value="11200"/>
 	</bean>
 
 	<alias name="defaultNewsLetterOptionsService" alias="newsLetterOptionsService"/>

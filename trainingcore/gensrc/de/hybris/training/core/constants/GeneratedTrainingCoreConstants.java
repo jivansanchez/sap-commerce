@@ -1,7 +1,7 @@
 /*
  * ----------------------------------------------------------------
  * --- WARNING: THIS FILE IS GENERATED AND WILL BE OVERWRITTEN! ---
- * --- Generated at Feb 10, 2020 4:30:13 AM                     ---
+ * --- Generated at Feb 10, 2020 11:56:44 AM                    ---
  * ----------------------------------------------------------------
  *  
  * [y] hybris Platform
@@ -30,6 +30,7 @@ public class GeneratedTrainingCoreConstants
 		public static final String MOBILEADDITIONALINFO = "MobileAdditionalInfo".intern();
 		public static final String NEWSLETTEROPTIONS = "NewsLetterOptions".intern();
 		public static final String SWATCHCOLORENUM = "SwatchColorEnum".intern();
+		public static final String TRIPODSADDITIONALDATA = "TripodsAdditionalData".intern();
 	}
 	public static class Attributes
 	{

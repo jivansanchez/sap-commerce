@@ -1,7 +1,7 @@
 /*
  * ----------------------------------------------------------------
  * --- WARNING: THIS FILE IS GENERATED AND WILL BE OVERWRITTEN! ---
- * --- Generated at Feb 10, 2020 4:30:13 AM                     ---
+ * --- Generated at Feb 10, 2020 11:56:44 AM                    ---
  * ----------------------------------------------------------------
  *  
  * [y] hybris Platform
@@ -222,6 +222,32 @@ public abstract class GeneratedTrainingCoreManager extends Extension
 	public NewsLetterOptions createNewsLetterOptions(final Map attributeValues)
 	{
 		return createNewsLetterOptions( getSession().getSessionContext(), attributeValues );
+	}
+	
+	public CustomerStoreLogin createTripodsAdditionalData(final SessionContext ctx, final Map attributeValues)
+	{
+		try
+		{
+			ComposedType type = getTenant().getJaloConnection().getTypeManager().getComposedType( TrainingCoreConstants.TC.TRIPODSADDITIONALDATA );
+			return (CustomerStoreLogin)type.newInstance( ctx, attributeValues );
+		}
+		catch( JaloGenericCreationException e)
+		{
+			final Throwable cause = e.getCause();
+			throw (cause instanceof RuntimeException ?
+			(RuntimeException)cause
+			:
+			new JaloSystemException( cause, cause.getMessage(), e.getErrorCode() ) );
+		}
+		catch( JaloBusinessException e )
+		{
+			throw new JaloSystemException( e ,"error creating TripodsAdditionalData : "+e.getMessage(), 0 );
+		}
+	}
+	
+	public CustomerStoreLogin createTripodsAdditionalData(final Map attributeValues)
+	{
+		return createTripodsAdditionalData( getSession().getSessionContext(), attributeValues );
 	}
 	
 	@Override

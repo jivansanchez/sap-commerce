@@ -1,7 +1,7 @@
 /*
  * ----------------------------------------------------------------
  * --- WARNING: THIS FILE IS GENERATED AND WILL BE OVERWRITTEN! ---
- * --- Generated at Feb 10, 2020 4:30:13 AM                     ---
+ * --- Generated at Feb 10, 2020 11:56:44 AM                    ---
  * ----------------------------------------------------------------
  *  
  * [y] hybris Platform
@@ -22,25 +22,27 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * Generated class for type {@link de.hybris.training.core.jalo.CustomerStoreLogin MobileAdditionalInfo}.
+ * Generated class for type {@link de.hybris.training.core.jalo.CustomerStoreLogin TripodsAdditionalData}.
  */
 @SuppressWarnings({"deprecation","unused","cast","PMD"})
 public abstract class GeneratedCustomerStoreLogin extends GenericItem
 {
-	/** Qualifier of the <code>MobileAdditionalInfo.code</code> attribute **/
+	/** Qualifier of the <code>TripodsAdditionalData.code</code> attribute **/
 	public static final String CODE = "code";
-	/** Qualifier of the <code>MobileAdditionalInfo.name</code> attribute **/
+	/** Qualifier of the <code>TripodsAdditionalData.name</code> attribute **/
 	public static final String NAME = "name";
-	/** Qualifier of the <code>MobileAdditionalInfo.description</code> attribute **/
+	/** Qualifier of the <code>TripodsAdditionalData.description</code> attribute **/
 	public static final String DESCRIPTION = "description";
-	/** Qualifier of the <code>MobileAdditionalInfo.year</code> attribute **/
-	public static final String YEAR = "year";
-	/** Qualifier of the <code>MobileAdditionalInfo.isTouch</code> attribute **/
-	public static final String ISTOUCH = "isTouch";
-	/** Qualifier of the <code>MobileAdditionalInfo.factory</code> attribute **/
-	public static final String FACTORY = "factory";
-	/** Qualifier of the <code>MobileAdditionalInfo.isSmart</code> attribute **/
-	public static final String ISSMART = "isSmart";
+	/** Qualifier of the <code>TripodsAdditionalData.brand</code> attribute **/
+	public static final String BRAND = "brand";
+	/** Qualifier of the <code>TripodsAdditionalData.color</code> attribute **/
+	public static final String COLOR = "color";
+	/** Qualifier of the <code>TripodsAdditionalData.isNew</code> attribute **/
+	public static final String ISNEW = "isNew";
+	/** Qualifier of the <code>TripodsAdditionalData.isPortatil</code> attribute **/
+	public static final String ISPORTATIL = "isPortatil";
+	/** Qualifier of the <code>TripodsAdditionalData.high</code> attribute **/
+	public static final String HIGH = "high";
 	protected static final Map<String, AttributeMode> DEFAULT_INITIAL_ATTRIBUTES;
 	static
 	{
@@ -48,10 +50,11 @@ public abstract class GeneratedCustomerStoreLogin extends GenericItem
 		tmp.put(CODE, AttributeMode.INITIAL);
 		tmp.put(NAME, AttributeMode.INITIAL);
 		tmp.put(DESCRIPTION, AttributeMode.INITIAL);
-		tmp.put(YEAR, AttributeMode.INITIAL);
-		tmp.put(ISTOUCH, AttributeMode.INITIAL);
-		tmp.put(FACTORY, AttributeMode.INITIAL);
-		tmp.put(ISSMART, AttributeMode.INITIAL);
+		tmp.put(BRAND, AttributeMode.INITIAL);
+		tmp.put(COLOR, AttributeMode.INITIAL);
+		tmp.put(ISNEW, AttributeMode.INITIAL);
+		tmp.put(ISPORTATIL, AttributeMode.INITIAL);
+		tmp.put(HIGH, AttributeMode.INITIAL);
 		DEFAULT_INITIAL_ATTRIBUTES = Collections.unmodifiableMap(tmp);
 	}
 	@Override
@@ -61,7 +64,43 @@ public abstract class GeneratedCustomerStoreLogin extends GenericItem
 	}
 	
 	/**
-	 * <i>Generated method</i> - Getter of the <code>MobileAdditionalInfo.code</code> attribute.
+	 * <i>Generated method</i> - Getter of the <code>TripodsAdditionalData.brand</code> attribute.
+	 * @return the brand
+	 */
+	public String getBrand(final SessionContext ctx)
+	{
+		return (String)getProperty( ctx, BRAND);
+	}
+	
+	/**
+	 * <i>Generated method</i> - Getter of the <code>TripodsAdditionalData.brand</code> attribute.
+	 * @return the brand
+	 */
+	public String getBrand()
+	{
+		return getBrand( getSession().getSessionContext() );
+	}
+	
+	/**
+	 * <i>Generated method</i> - Setter of the <code>TripodsAdditionalData.brand</code> attribute. 
+	 * @param value the brand
+	 */
+	public void setBrand(final SessionContext ctx, final String value)
+	{
+		setProperty(ctx, BRAND,value);
+	}
+	
+	/**
+	 * <i>Generated method</i> - Setter of the <code>TripodsAdditionalData.brand</code> attribute. 
+	 * @param value the brand
+	 */
+	public void setBrand(final String value)
+	{
+		setBrand( getSession().getSessionContext(), value );
+	}
+	
+	/**
+	 * <i>Generated method</i> - Getter of the <code>TripodsAdditionalData.code</code> attribute.
 	 * @return the code
 	 */
 	public String getCode(final SessionContext ctx)
@@ -70,7 +109,7 @@ public abstract class GeneratedCustomerStoreLogin extends GenericItem
 	}
 	
 	/**
-	 * <i>Generated method</i> - Getter of the <code>MobileAdditionalInfo.code</code> attribute.
+	 * <i>Generated method</i> - Getter of the <code>TripodsAdditionalData.code</code> attribute.
 	 * @return the code
 	 */
 	public String getCode()
@@ -79,7 +118,7 @@ public abstract class GeneratedCustomerStoreLogin extends GenericItem
 	}
 	
 	/**
-	 * <i>Generated method</i> - Setter of the <code>MobileAdditionalInfo.code</code> attribute. 
+	 * <i>Generated method</i> - Setter of the <code>TripodsAdditionalData.code</code> attribute. 
 	 * @param value the code
 	 */
 	public void setCode(final SessionContext ctx, final String value)
@@ -88,7 +127,7 @@ public abstract class GeneratedCustomerStoreLogin extends GenericItem
 	}
 	
 	/**
-	 * <i>Generated method</i> - Setter of the <code>MobileAdditionalInfo.code</code> attribute. 
+	 * <i>Generated method</i> - Setter of the <code>TripodsAdditionalData.code</code> attribute. 
 	 * @param value the code
 	 */
 	public void setCode(final String value)
@@ -97,7 +136,43 @@ public abstract class GeneratedCustomerStoreLogin extends GenericItem
 	}
 	
 	/**
-	 * <i>Generated method</i> - Getter of the <code>MobileAdditionalInfo.description</code> attribute.
+	 * <i>Generated method</i> - Getter of the <code>TripodsAdditionalData.color</code> attribute.
+	 * @return the color
+	 */
+	public String getColor(final SessionContext ctx)
+	{
+		return (String)getProperty( ctx, COLOR);
+	}
+	
+	/**
+	 * <i>Generated method</i> - Getter of the <code>TripodsAdditionalData.color</code> attribute.
+	 * @return the color
+	 */
+	public String getColor()
+	{
+		return getColor( getSession().getSessionContext() );
+	}
+	
+	/**
+	 * <i>Generated method</i> - Setter of the <code>TripodsAdditionalData.color</code> attribute. 
+	 * @param value the color
+	 */
+	public void setColor(final SessionContext ctx, final String value)
+	{
+		setProperty(ctx, COLOR,value);
+	}
+	
+	/**
+	 * <i>Generated method</i> - Setter of the <code>TripodsAdditionalData.color</code> attribute. 
+	 * @param value the color
+	 */
+	public void setColor(final String value)
+	{
+		setColor( getSession().getSessionContext(), value );
+	}
+	
+	/**
+	 * <i>Generated method</i> - Getter of the <code>TripodsAdditionalData.description</code> attribute.
 	 * @return the description
 	 */
 	public String getDescription(final SessionContext ctx)
@@ -106,7 +181,7 @@ public abstract class GeneratedCustomerStoreLogin extends GenericItem
 	}
 	
 	/**
-	 * <i>Generated method</i> - Getter of the <code>MobileAdditionalInfo.description</code> attribute.
+	 * <i>Generated method</i> - Getter of the <code>TripodsAdditionalData.description</code> attribute.
 	 * @return the description
 	 */
 	public String getDescription()
@@ -115,7 +190,7 @@ public abstract class GeneratedCustomerStoreLogin extends GenericItem
 	}
 	
 	/**
-	 * <i>Generated method</i> - Setter of the <code>MobileAdditionalInfo.description</code> attribute. 
+	 * <i>Generated method</i> - Setter of the <code>TripodsAdditionalData.description</code> attribute. 
 	 * @param value the description
 	 */
 	public void setDescription(final SessionContext ctx, final String value)
@@ -124,7 +199,7 @@ public abstract class GeneratedCustomerStoreLogin extends GenericItem
 	}
 	
 	/**
-	 * <i>Generated method</i> - Setter of the <code>MobileAdditionalInfo.description</code> attribute. 
+	 * <i>Generated method</i> - Setter of the <code>TripodsAdditionalData.description</code> attribute. 
 	 * @param value the description
 	 */
 	public void setDescription(final String value)
@@ -133,189 +208,226 @@ public abstract class GeneratedCustomerStoreLogin extends GenericItem
 	}
 	
 	/**
-	 * <i>Generated method</i> - Getter of the <code>MobileAdditionalInfo.factory</code> attribute.
-	 * @return the factory
+	 * <i>Generated method</i> - Getter of the <code>TripodsAdditionalData.high</code> attribute.
+	 * @return the high
 	 */
-	public String getFactory(final SessionContext ctx)
+	public Integer getHigh(final SessionContext ctx)
 	{
-		return (String)getProperty( ctx, FACTORY);
+		return (Integer)getProperty( ctx, HIGH);
 	}
 	
 	/**
-	 * <i>Generated method</i> - Getter of the <code>MobileAdditionalInfo.factory</code> attribute.
-	 * @return the factory
+	 * <i>Generated method</i> - Getter of the <code>TripodsAdditionalData.high</code> attribute.
+	 * @return the high
 	 */
-	public String getFactory()
+	public Integer getHigh()
 	{
-		return getFactory( getSession().getSessionContext() );
+		return getHigh( getSession().getSessionContext() );
 	}
 	
 	/**
-	 * <i>Generated method</i> - Setter of the <code>MobileAdditionalInfo.factory</code> attribute. 
-	 * @param value the factory
+	 * <i>Generated method</i> - Getter of the <code>TripodsAdditionalData.high</code> attribute. 
+	 * @return the high
 	 */
-	public void setFactory(final SessionContext ctx, final String value)
+	public int getHighAsPrimitive(final SessionContext ctx)
 	{
-		setProperty(ctx, FACTORY,value);
+		Integer value = getHigh( ctx );
+		return value != null ? value.intValue() : 0;
 	}
 	
 	/**
-	 * <i>Generated method</i> - Setter of the <code>MobileAdditionalInfo.factory</code> attribute. 
-	 * @param value the factory
+	 * <i>Generated method</i> - Getter of the <code>TripodsAdditionalData.high</code> attribute. 
+	 * @return the high
 	 */
-	public void setFactory(final String value)
+	public int getHighAsPrimitive()
 	{
-		setFactory( getSession().getSessionContext(), value );
+		return getHighAsPrimitive( getSession().getSessionContext() );
 	}
 	
 	/**
-	 * <i>Generated method</i> - Getter of the <code>MobileAdditionalInfo.isSmart</code> attribute.
-	 * @return the isSmart
+	 * <i>Generated method</i> - Setter of the <code>TripodsAdditionalData.high</code> attribute. 
+	 * @param value the high
 	 */
-	public Boolean isIsSmart(final SessionContext ctx)
+	public void setHigh(final SessionContext ctx, final Integer value)
 	{
-		return (Boolean)getProperty( ctx, ISSMART);
+		setProperty(ctx, HIGH,value);
 	}
 	
 	/**
-	 * <i>Generated method</i> - Getter of the <code>MobileAdditionalInfo.isSmart</code> attribute.
-	 * @return the isSmart
+	 * <i>Generated method</i> - Setter of the <code>TripodsAdditionalData.high</code> attribute. 
+	 * @param value the high
 	 */
-	public Boolean isIsSmart()
+	public void setHigh(final Integer value)
 	{
-		return isIsSmart( getSession().getSessionContext() );
+		setHigh( getSession().getSessionContext(), value );
 	}
 	
 	/**
-	 * <i>Generated method</i> - Getter of the <code>MobileAdditionalInfo.isSmart</code> attribute. 
-	 * @return the isSmart
+	 * <i>Generated method</i> - Setter of the <code>TripodsAdditionalData.high</code> attribute. 
+	 * @param value the high
 	 */
-	public boolean isIsSmartAsPrimitive(final SessionContext ctx)
+	public void setHigh(final SessionContext ctx, final int value)
 	{
-		Boolean value = isIsSmart( ctx );
+		setHigh( ctx,Integer.valueOf( value ) );
+	}
+	
+	/**
+	 * <i>Generated method</i> - Setter of the <code>TripodsAdditionalData.high</code> attribute. 
+	 * @param value the high
+	 */
+	public void setHigh(final int value)
+	{
+		setHigh( getSession().getSessionContext(), value );
+	}
+	
+	/**
+	 * <i>Generated method</i> - Getter of the <code>TripodsAdditionalData.isNew</code> attribute.
+	 * @return the isNew
+	 */
+	public Boolean isIsNew(final SessionContext ctx)
+	{
+		return (Boolean)getProperty( ctx, ISNEW);
+	}
+	
+	/**
+	 * <i>Generated method</i> - Getter of the <code>TripodsAdditionalData.isNew</code> attribute.
+	 * @return the isNew
+	 */
+	public Boolean isIsNew()
+	{
+		return isIsNew( getSession().getSessionContext() );
+	}
+	
+	/**
+	 * <i>Generated method</i> - Getter of the <code>TripodsAdditionalData.isNew</code> attribute. 
+	 * @return the isNew
+	 */
+	public boolean isIsNewAsPrimitive(final SessionContext ctx)
+	{
+		Boolean value = isIsNew( ctx );
 		return value != null ? value.booleanValue() : false;
 	}
 	
 	/**
-	 * <i>Generated method</i> - Getter of the <code>MobileAdditionalInfo.isSmart</code> attribute. 
-	 * @return the isSmart
+	 * <i>Generated method</i> - Getter of the <code>TripodsAdditionalData.isNew</code> attribute. 
+	 * @return the isNew
 	 */
-	public boolean isIsSmartAsPrimitive()
+	public boolean isIsNewAsPrimitive()
 	{
-		return isIsSmartAsPrimitive( getSession().getSessionContext() );
+		return isIsNewAsPrimitive( getSession().getSessionContext() );
 	}
 	
 	/**
-	 * <i>Generated method</i> - Setter of the <code>MobileAdditionalInfo.isSmart</code> attribute. 
-	 * @param value the isSmart
+	 * <i>Generated method</i> - Setter of the <code>TripodsAdditionalData.isNew</code> attribute. 
+	 * @param value the isNew
 	 */
-	public void setIsSmart(final SessionContext ctx, final Boolean value)
+	public void setIsNew(final SessionContext ctx, final Boolean value)
 	{
-		setProperty(ctx, ISSMART,value);
+		setProperty(ctx, ISNEW,value);
 	}
 	
 	/**
-	 * <i>Generated method</i> - Setter of the <code>MobileAdditionalInfo.isSmart</code> attribute. 
-	 * @param value the isSmart
+	 * <i>Generated method</i> - Setter of the <code>TripodsAdditionalData.isNew</code> attribute. 
+	 * @param value the isNew
 	 */
-	public void setIsSmart(final Boolean value)
+	public void setIsNew(final Boolean value)
 	{
-		setIsSmart( getSession().getSessionContext(), value );
+		setIsNew( getSession().getSessionContext(), value );
 	}
 	
 	/**
-	 * <i>Generated method</i> - Setter of the <code>MobileAdditionalInfo.isSmart</code> attribute. 
-	 * @param value the isSmart
+	 * <i>Generated method</i> - Setter of the <code>TripodsAdditionalData.isNew</code> attribute. 
+	 * @param value the isNew
 	 */
-	public void setIsSmart(final SessionContext ctx, final boolean value)
+	public void setIsNew(final SessionContext ctx, final boolean value)
 	{
-		setIsSmart( ctx,Boolean.valueOf( value ) );
+		setIsNew( ctx,Boolean.valueOf( value ) );
 	}
 	
 	/**
-	 * <i>Generated method</i> - Setter of the <code>MobileAdditionalInfo.isSmart</code> attribute. 
-	 * @param value the isSmart
+	 * <i>Generated method</i> - Setter of the <code>TripodsAdditionalData.isNew</code> attribute. 
+	 * @param value the isNew
 	 */
-	public void setIsSmart(final boolean value)
+	public void setIsNew(final boolean value)
 	{
-		setIsSmart( getSession().getSessionContext(), value );
+		setIsNew( getSession().getSessionContext(), value );
 	}
 	
 	/**
-	 * <i>Generated method</i> - Getter of the <code>MobileAdditionalInfo.isTouch</code> attribute.
-	 * @return the isTouch
+	 * <i>Generated method</i> - Getter of the <code>TripodsAdditionalData.isPortatil</code> attribute.
+	 * @return the isPortatil
 	 */
-	public Boolean isIsTouch(final SessionContext ctx)
+	public Boolean isIsPortatil(final SessionContext ctx)
 	{
-		return (Boolean)getProperty( ctx, ISTOUCH);
+		return (Boolean)getProperty( ctx, ISPORTATIL);
 	}
 	
 	/**
-	 * <i>Generated method</i> - Getter of the <code>MobileAdditionalInfo.isTouch</code> attribute.
-	 * @return the isTouch
+	 * <i>Generated method</i> - Getter of the <code>TripodsAdditionalData.isPortatil</code> attribute.
+	 * @return the isPortatil
 	 */
-	public Boolean isIsTouch()
+	public Boolean isIsPortatil()
 	{
-		return isIsTouch( getSession().getSessionContext() );
+		return isIsPortatil( getSession().getSessionContext() );
 	}
 	
 	/**
-	 * <i>Generated method</i> - Getter of the <code>MobileAdditionalInfo.isTouch</code> attribute. 
-	 * @return the isTouch
+	 * <i>Generated method</i> - Getter of the <code>TripodsAdditionalData.isPortatil</code> attribute. 
+	 * @return the isPortatil
 	 */
-	public boolean isIsTouchAsPrimitive(final SessionContext ctx)
+	public boolean isIsPortatilAsPrimitive(final SessionContext ctx)
 	{
-		Boolean value = isIsTouch( ctx );
+		Boolean value = isIsPortatil( ctx );
 		return value != null ? value.booleanValue() : false;
 	}
 	
 	/**
-	 * <i>Generated method</i> - Getter of the <code>MobileAdditionalInfo.isTouch</code> attribute. 
-	 * @return the isTouch
+	 * <i>Generated method</i> - Getter of the <code>TripodsAdditionalData.isPortatil</code> attribute. 
+	 * @return the isPortatil
 	 */
-	public boolean isIsTouchAsPrimitive()
+	public boolean isIsPortatilAsPrimitive()
 	{
-		return isIsTouchAsPrimitive( getSession().getSessionContext() );
+		return isIsPortatilAsPrimitive( getSession().getSessionContext() );
 	}
 	
 	/**
-	 * <i>Generated method</i> - Setter of the <code>MobileAdditionalInfo.isTouch</code> attribute. 
-	 * @param value the isTouch
+	 * <i>Generated method</i> - Setter of the <code>TripodsAdditionalData.isPortatil</code> attribute. 
+	 * @param value the isPortatil
 	 */
-	public void setIsTouch(final SessionContext ctx, final Boolean value)
+	public void setIsPortatil(final SessionContext ctx, final Boolean value)
 	{
-		setProperty(ctx, ISTOUCH,value);
+		setProperty(ctx, ISPORTATIL,value);
 	}
 	
 	/**
-	 * <i>Generated method</i> - Setter of the <code>MobileAdditionalInfo.isTouch</code> attribute. 
-	 * @param value the isTouch
+	 * <i>Generated method</i> - Setter of the <code>TripodsAdditionalData.isPortatil</code> attribute. 
+	 * @param value the isPortatil
 	 */
-	public void setIsTouch(final Boolean value)
+	public void setIsPortatil(final Boolean value)
 	{
-		setIsTouch( getSession().getSessionContext(), value );
+		setIsPortatil( getSession().getSessionContext(), value );
 	}
 	
 	/**
-	 * <i>Generated method</i> - Setter of the <code>MobileAdditionalInfo.isTouch</code> attribute. 
-	 * @param value the isTouch
+	 * <i>Generated method</i> - Setter of the <code>TripodsAdditionalData.isPortatil</code> attribute. 
+	 * @param value the isPortatil
 	 */
-	public void setIsTouch(final SessionContext ctx, final boolean value)
+	public void setIsPortatil(final SessionContext ctx, final boolean value)
 	{
-		setIsTouch( ctx,Boolean.valueOf( value ) );
+		setIsPortatil( ctx,Boolean.valueOf( value ) );
 	}
 	
 	/**
-	 * <i>Generated method</i> - Setter of the <code>MobileAdditionalInfo.isTouch</code> attribute. 
-	 * @param value the isTouch
+	 * <i>Generated method</i> - Setter of the <code>TripodsAdditionalData.isPortatil</code> attribute. 
+	 * @param value the isPortatil
 	 */
-	public void setIsTouch(final boolean value)
+	public void setIsPortatil(final boolean value)
 	{
-		setIsTouch( getSession().getSessionContext(), value );
+		setIsPortatil( getSession().getSessionContext(), value );
 	}
 	
 	/**
-	 * <i>Generated method</i> - Getter of the <code>MobileAdditionalInfo.name</code> attribute.
+	 * <i>Generated method</i> - Getter of the <code>TripodsAdditionalData.name</code> attribute.
 	 * @return the name
 	 */
 	public String getName(final SessionContext ctx)
@@ -324,7 +436,7 @@ public abstract class GeneratedCustomerStoreLogin extends GenericItem
 	}
 	
 	/**
-	 * <i>Generated method</i> - Getter of the <code>MobileAdditionalInfo.name</code> attribute.
+	 * <i>Generated method</i> - Getter of the <code>TripodsAdditionalData.name</code> attribute.
 	 * @return the name
 	 */
 	public String getName()
@@ -333,7 +445,7 @@ public abstract class GeneratedCustomerStoreLogin extends GenericItem
 	}
 	
 	/**
-	 * <i>Generated method</i> - Setter of the <code>MobileAdditionalInfo.name</code> attribute. 
+	 * <i>Generated method</i> - Setter of the <code>TripodsAdditionalData.name</code> attribute. 
 	 * @param value the name
 	 */
 	public void setName(final SessionContext ctx, final String value)
@@ -342,48 +454,12 @@ public abstract class GeneratedCustomerStoreLogin extends GenericItem
 	}
 	
 	/**
-	 * <i>Generated method</i> - Setter of the <code>MobileAdditionalInfo.name</code> attribute. 
+	 * <i>Generated method</i> - Setter of the <code>TripodsAdditionalData.name</code> attribute. 
 	 * @param value the name
 	 */
 	public void setName(final String value)
 	{
 		setName( getSession().getSessionContext(), value );
-	}
-	
-	/**
-	 * <i>Generated method</i> - Getter of the <code>MobileAdditionalInfo.year</code> attribute.
-	 * @return the year
-	 */
-	public String getYear(final SessionContext ctx)
-	{
-		return (String)getProperty( ctx, YEAR);
-	}
-	
-	/**
-	 * <i>Generated method</i> - Getter of the <code>MobileAdditionalInfo.year</code> attribute.
-	 * @return the year
-	 */
-	public String getYear()
-	{
-		return getYear( getSession().getSessionContext() );
-	}
-	
-	/**
-	 * <i>Generated method</i> - Setter of the <code>MobileAdditionalInfo.year</code> attribute. 
-	 * @param value the year
-	 */
-	public void setYear(final SessionContext ctx, final String value)
-	{
-		setProperty(ctx, YEAR,value);
-	}
-	
-	/**
-	 * <i>Generated method</i> - Setter of the <code>MobileAdditionalInfo.year</code> attribute. 
-	 * @param value the year
-	 */
-	public void setYear(final String value)
-	{
-		setYear( getSession().getSessionContext(), value );
 	}
 	
 }

@@ -135,4 +135,112 @@
 	</context>
 
 
+
+	<context merge-by="module" parent="auto" component="explorer-tree">
+		<explorer-tree:explorer-tree xmlns:explorer-tree="http://www.hybris.com/cockpitng/config/explorertree">
+			<explorer-tree:navigation-node id="Training">
+				<explorer-tree:type-node code="TripodsAdditionalData" id="TripodsAdditionalData" position="0"/>
+			</explorer-tree:navigation-node>
+		</explorer-tree:explorer-tree>
+	</context>
+
+	<context type="TripodsAdditionalData" component="advanced-search" merge-by="type" parent="GenericItem">
+		<advanced-search:advanced-search>
+			<advanced-search:field-list>
+				<advanced-search:field name="code"/>
+				<advanced-search:field name="name"/>
+				<advanced-search:field name="brand"/>
+				<advanced-search:field name="color"/>
+				<advanced-search:field name="high"/>
+			</advanced-search:field-list>
+		</advanced-search:advanced-search>
+	</context>
+
+	<context merge-by="type" parent="GenericItem" type="TripodsAdditionalData" component="listview">
+		<list-view:list-view xmlns:list-view="http://www.hybris.com/cockpitng/component/listView">
+			<list-view:column qualifier="code"/>
+			<list-view:column qualifier="name"/>
+			<list-view:column qualifier="brand"/>
+			<list-view:column qualifier="color"/>
+			<list-view:column qualifier="high"/>
+			<list-view:column qualifier="isNew"/>
+			<list-view:column qualifier="isPortatil"/>
+		</list-view:list-view>
+	</context>
+
+	<context merge-by="type" parent="auto" type="TripodsAdditionalData" component="editor-area">
+		<editorArea:editorArea merge-mode="append" xmlns:editorArea="http://www.hybris.com/cockpitng/component/editorArea">
+			<editorArea:tab name="hmc.common">
+				<editorArea:section name="hmc.keyfood">
+					<editorArea:attribute xmlns="http://www.hybris.com/cockpitng/component/editorArea" qualifier="code"/>
+					<editorArea:attribute xmlns="http://www.hybris.com/cockpitng/component/editorArea" qualifier="name"/>
+					<editorArea:attribute xmlns="http://www.hybris.com/cockpitng/component/editorArea" qualifier="description"/>
+				</editorArea:section>
+			</editorArea:tab>
+			<editorArea:tab name="hmc.properties">
+				<editorArea:section name="hmc.properties">
+					<editorArea:attribute xmlns="http://www.hybris.com/cockpitng/component/editorArea" qualifier="brand"/>
+					<editorArea:attribute xmlns="http://www.hybris.com/cockpitng/component/editorArea" qualifier="color"/>
+					<editorArea:attribute xmlns="http://www.hybris.com/cockpitng/component/editorArea" qualifier="high"/>
+				</editorArea:section>
+			</editorArea:tab>
+			<editorArea:tab name="hmc.administration" >
+				<editorArea:section name="hmc.administration" >
+					<editorArea:attribute xmlns="http://www.hybris.com/cockpitng/component/editorArea" qualifier="isNew"/>
+					<editorArea:attribute xmlns="http://www.hybris.com/cockpitng/component/editorArea" qualifier="isPortatil"/>
+				</editorArea:section>
+			</editorArea:tab>
+		</editorArea:editorArea>
+	</context>
+
+	<context type="TripodsAdditionalData" component="create-wizard">
+		<wz:flow id="ConstraintGroupWizard" title="create.title(ctx.TYPE_CODE)">
+			<wz:prepare id="itemPrepare">
+				<wz:initialize property="newObject" type="ctx.TYPE_CODE"/>
+			</wz:prepare>
+			<wz:step id="step1" label="flow.allmanadatory">
+				<wz:content id="step1.content">
+					<wz:property-list root="newObject">
+						<wz:property qualifier="code"/>
+						<wz:property qualifier="name"/>
+						<wz:property qualifier="description"/>
+					</wz:property-list>
+				</wz:content>
+				<wz:navigation id="step1.navigation">
+					<wz:cancel/>
+					<wz:next/>
+				</wz:navigation>
+			</wz:step>
+			<wz:step id="step2" label="flow.allmanadatory">
+				<wz:content id="step2.content">
+					<wz:property-list root="newObject">
+						<wz:property qualifier="brand"/>
+						<wz:property qualifier="color"/>
+						<wz:property qualifier="high"/>
+					</wz:property-list>
+				</wz:content>
+				<wz:navigation id="step2.navigation">
+					<wz:cancel/>
+					<wz:back/>
+					<wz:next/>
+				</wz:navigation>
+			</wz:step>
+			<wz:step id="step3" label="flow.allmanadatory">
+				<wz:content id="step3.content">
+					<wz:property-list root="newObject">
+						<wz:property qualifier="isNew"/>
+						<wz:property qualifier="isPortatil"/>
+					</wz:property-list>
+				</wz:content>
+				<wz:navigation id="step3.navigation">
+					<wz:cancel/>
+					<wz:back/>
+					<wz:done>
+						<wz:save property="newObject"/>
+					</wz:done>
+				</wz:navigation>
+			</wz:step>
+		</wz:flow>
+	</context>
+
 </config>
