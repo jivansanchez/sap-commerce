@@ -57,6 +57,16 @@
 				</td>
 			</tr>
 			<tr>
+				<td colspan="4" class="structureViewSection">
+					<cockpit code="CategoryCarouselContent" />
+				</td>
+			</tr>
+			<tr>
+				<td colspan="4" class="structureViewSection">
+					<cockpit code="PDPParagraphComponent" />
+				</td>
+			</tr>
+			<tr>
 				<td height="267px" width="20%" class="structureViewSection" style="vertical-align:top;">
 					<cockpit code="UpSelling" />
 				</td>

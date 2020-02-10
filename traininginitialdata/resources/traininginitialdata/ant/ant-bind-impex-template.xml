@@ -11,8 +11,8 @@
 -->
 <project name="bindImpexTemplates">
 
-	<property name="contentCatalogToken" value="__CONTENT_CATALOG_NAME__"/>
-	<property name="productCatalogToken" value="__PRODUCT_CATALOG_NAME__"/>
+	<property name="contentCatalogToken" value="electronicsContentCatalog"/>
+	<property name="productCatalogToken" value="electronicsProductCatalog"/>
 	<property name="storeNameToken" value="__STORE_NAME__"/>
 	<property name="classificationCatalogToken" value="__CLASSIFICATION_CATALOG_NAME__"/>
 	<property name="storeUidToken" value="__STORE_UID__"/>

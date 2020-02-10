@@ -1,7 +1,7 @@
 /*
  * ----------------------------------------------------------------
  * --- WARNING: THIS FILE IS GENERATED AND WILL BE OVERWRITTEN! ---
- * --- Generated at Feb 8, 2020 5:10:11 AM                      ---
+ * --- Generated at Feb 9, 2020 6:44:59 AM                      ---
  * ----------------------------------------------------------------
  *  
  * [y] hybris Platform
@@ -29,6 +29,7 @@ import de.hybris.training.core.constants.TrainingCoreConstants;
 import de.hybris.training.core.jalo.ApparelProduct;
 import de.hybris.training.core.jalo.ApparelSizeVariantProduct;
 import de.hybris.training.core.jalo.ApparelStyleVariantProduct;
+import de.hybris.training.core.jalo.CustomerStoreLogin;
 import de.hybris.training.core.jalo.ElectronicsColorVariantProduct;
 import de.hybris.training.core.jalo.NewsLetterOptions;
 import java.util.Collections;
@@ -169,6 +170,32 @@ public abstract class GeneratedTrainingCoreManager extends Extension
 	public ElectronicsColorVariantProduct createElectronicsColorVariantProduct(final Map attributeValues)
 	{
 		return createElectronicsColorVariantProduct( getSession().getSessionContext(), attributeValues );
+	}
+	
+	public CustomerStoreLogin createMobileAdditionalInfo(final SessionContext ctx, final Map attributeValues)
+	{
+		try
+		{
+			ComposedType type = getTenant().getJaloConnection().getTypeManager().getComposedType( TrainingCoreConstants.TC.MOBILEADDITIONALINFO );
+			return (CustomerStoreLogin)type.newInstance( ctx, attributeValues );
+		}
+		catch( JaloGenericCreationException e)
+		{
+			final Throwable cause = e.getCause();
+			throw (cause instanceof RuntimeException ?
+			(RuntimeException)cause
+			:
+			new JaloSystemException( cause, cause.getMessage(), e.getErrorCode() ) );
+		}
+		catch( JaloBusinessException e )
+		{
+			throw new JaloSystemException( e ,"error creating MobileAdditionalInfo : "+e.getMessage(), 0 );
+		}
+	}
+	
+	public CustomerStoreLogin createMobileAdditionalInfo(final Map attributeValues)
+	{
+		return createMobileAdditionalInfo( getSession().getSessionContext(), attributeValues );
 	}
 	
 	public NewsLetterOptions createNewsLetterOptions(final SessionContext ctx, final Map attributeValues)

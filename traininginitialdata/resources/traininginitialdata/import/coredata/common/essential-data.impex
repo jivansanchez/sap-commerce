@@ -57,17 +57,35 @@ INSERT_UPDATE SiteMapLanguageCurrency;&siteMapLanguageCurrency;language(isoCode)
 ;zhGbp;zh;GBP
 ;zhEur;zh;EUR
 
+
 # Vendor
 INSERT_UPDATE Vendor;code[unique=true];name
 ;default;Default Vendor
+;electro;
 
-# Warehouse
-INSERT_UPDATE Warehouse;code[unique=true];name;vendor(code)[default=default];default[default=true]
+INSERT Warehouse;code[unique=true];name;vendor(code)[default=default, forceWrite=true];default[default=true, forceWrite=true]
+"#% beforeEach:
+import de.hybris.platform.core.Registry;
+import de.hybris.platform.ordersplitting.model.WarehouseModel;
+String warehouseCode = line.get(Integer.valueOf(1));
+WarehouseModel warehouse;
+try
+{
+    warehouse = Registry.getApplicationContext().getBean(""warehouseService"").getWarehouseForCode(warehouseCode);
+}
+catch (Exception e)
+{
+    warehouse = null;
+}
+if (warehouse != null)
+{
+    line.clear();
+}"
 ;default;Default Warehouse;
-;warehouse_s;Warehouse South;
-;warehouse_e;Warehouse East;
-;warehouse_w;Warehouse West;
-;warehouse_n;Warehouse North;
+;warehouse_s;Warehouse South;electro;
+;warehouse_e;Warehouse East;electro;
+;warehouse_w;Warehouse West;electro;
+;warehouse_n;Warehouse North;electro;
 
 # Disable preview for email pages
 UPDATE CMSPageType;code[unique=true];previewDisabled
@@ -87,6 +105,7 @@ INSERT_UPDATE MediaFolder;qualifier[unique=true];path[unique=true]
 ;images;images
 ;email-body;email-body
 ;email-attachments;email-attachments
+;documents;documents
 
 # Media formats
 INSERT_UPDATE MediaFormat;qualifier[unique=true]
@@ -97,6 +116,10 @@ INSERT_UPDATE MediaFormat;qualifier[unique=true]
 ;96Wx96H
 ;65Wx65H
 ;30Wx30H
+;mobile
+;tablet
+;desktop
+;widescreen
 
 # Tax & Tax Groups
 INSERT_UPDATE UserTaxGroup;code[unique=true]
