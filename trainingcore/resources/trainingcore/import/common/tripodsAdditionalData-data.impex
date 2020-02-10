@@ -1,0 +1,6 @@
+INSERT_UPDATE TripodsAdditionalData;code[unique=true];name;description;brand;color;isNew[default=false];isPortatil[default=false];high;
+                                   ;k&fConcepts;DSLR Tripod;Lightweight and Compact Aluminum Camera Tripod;K&F;Black;true;true;150;
+                                   ;geekoto77;GEEKOTO77;Compact Aluminum Tripod with 360 Degree Ball Head;GEEKOTO;Orange;true;true;195;
+                                   ;viltroxVX18M;VILTROX VX-18M;Professional Heavy Duty Video Camcorder Tripod;VILTROX;Black;true;true;187;
+                                   ;yoTilon;DSLR YoTrilon;Portable Lightweight Camera SLR Ball Tripods;YoTilon;Black;true;true;125;
+                                   ;mactrem03;MactremPT55;Travel Camera Tripod Lightweight;MACTREM;Blue;true;true;170;

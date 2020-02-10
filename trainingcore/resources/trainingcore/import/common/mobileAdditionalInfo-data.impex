@@ -1,0 +1,6 @@
+INSERT_UPDATE MobileAdditionalInfo; code[unique=true]; name; description; year; factory; isTouch[default=false];isSmart[default=false];
+                                  ;iphone11;Iphone 11 PRO;Iphone 11 PRO;2019;Apple Inc;true;true;
+                                  ;xiaomi8;Xiaomi 8 PRO;Xiaomi 8 PRO;2019;Xiaomi Inc;true;true;
+                                  ;S10;S 10 PRO;S 10 PRO;2019;Samsung Inc;true;true;
+                                  ;Moto E5;Motorola E5 PRO;Motorola E5 PRO;2019;Motorola Inc;true;true;
+                                  ;P30 PRO;P 30 PRO;P 30 PRO;2019;Huawei Inc;true;true;
