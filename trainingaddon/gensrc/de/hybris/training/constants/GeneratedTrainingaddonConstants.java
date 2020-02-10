@@ -1,7 +1,7 @@
 /*
  * ----------------------------------------------------------------
  * --- WARNING: THIS FILE IS GENERATED AND WILL BE OVERWRITTEN! ---
- * --- Generated at Feb 9, 2020 6:44:59 AM                      ---
+ * --- Generated at Feb 10, 2020 4:30:13 AM                     ---
  * ----------------------------------------------------------------
  *  
  * [y] hybris Platform
@@ -25,6 +25,10 @@ public class GeneratedTrainingaddonConstants
 	{
 		public static final String CATEGORYPRODUCTSCAROUSELCOMPONENT = "CategoryProductsCarouselComponent".intern();
 		public static final String PDPPARAGRAPHCOMPONENT = "PDPParagraphComponent".intern();
+	}
+	public static class Attributes
+	{
+		// no constants defined.
 	}
 	
 	protected GeneratedTrainingaddonConstants()

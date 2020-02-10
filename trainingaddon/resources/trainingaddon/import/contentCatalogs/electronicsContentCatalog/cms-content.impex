@@ -10,3 +10,19 @@
 # -----------------------------------------------------------------------
 $contentCatalog=electronicsContentCatalog
 $contentCV=catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCatalog]),CatalogVersion.version[default=Staged])[default=$contentCatalog:Staged]
+$product-catalog=electronicsProductCatalog
+$productCV=catalogVersion(CatalogVersion.catalog(Catalog.id[default=$product-catalog]),CatalogVersion.version[default=Staged])[default=$product-catalog:Staged]
+
+INSERT_UPDATE CategoryProductsCarouselComponent;$contentCV[unique=true];uid[unique=true];name;categorycode(code,$productCV);scroll(code);title;maxProducts;popup;&componentRef
+;;PDPCategoryProductsCarouselComponent;PDP Category Products Carousel Component;brand_5;allVisible;"Category Related Products";10;false;PDPCategoryProductsCarouselComponent
+
+INSERT_UPDATE PDPParagraphComponent;$contentCV[unique=true];uid[unique=true];name;content;&componentRef
+;;PDPParagraphComponent;PDP Paragraph Component;"<div class=""nav_column"">	<div class=""title_holder"">		<div class=""title"">			<div class=""title-top"">				<span></span>			</div>		</div>		<h2>Terms and Conditions</h2>	</div>	<div class=""item"">		<ul class=""facet_block indent"">			<li><a href=""#a00"">Registration</a></li>			<li><a href=""#b00"">Eligibility to purchase</a></li>			<li><a href=""#c00"">Orders</a></li>			<li><a href=""#d00"">Pricing policy</a></li>			<li><a href=""#e00"">Sales price adjustment policy</a></li>			<li><a href=""#f00"">Acceptance of your order</a></li>			<li><a href=""#g00"">Payment</a></li>			<li><a href=""#h00"">Insurance and delivery</a></li>			<li><a href=""#i00"">Returns and exchanges</a></li>			<li><a href=""#j00"">Intellectual property rights</a></li>			<li><a href=""#k00"">Content</a></li>			<li><a href=""#l00"">No commercial use</a></li>			<li><a href=""#m00"">Your activity</a></li>			<li><a href=""#n00"">Third party</a></li>			<li><a href=""#o00"">General</a></li>			<li><a href=""#p00"">Indemnification</a></li>			<li><a href=""#q00"">General legal terms</a></li>		</ul>	</div></div>";PDPParagraphComponent;
+
+INSERT_UPDATE ContentSlot;$contentCV[unique=true];uid[unique=true];name;active;cmsComponents(&componentRef)
+;;Section5Slot-ProductDetails;Section5 Slot for ProductDetails;true;PDPCategoryProductsCarouselComponent
+;;Section5ASlot-ProductDetails;Section5A Slot for ProductDetails;true;PDPParagraphComponent
+
+INSERT_UPDATE ContentSlotForPage;$contentCV[unique=true];uid[unique=true];position[unique=true];page(uid,$contentCV)[unique=true][default='productDetails'];contentSlot(uid,$contentCV)[unique=true]
+;;Section5-ProductDetails;Section5;;Section5Slot-ProductDetails
+;;Section5A-ProductDetails;Section5A;;Section5ASlot-ProductDetails

@@ -18,6 +18,12 @@
 
 		<itemtypes>
 			<itemtype code="CategoryProductsCarouselComponent" autocreate="true" generate="true" extends="ProductCarouselComponent" >
+				<attributes>
+					<attribute qualifier="maxProducts" type="java.lang.Integer">
+						<modifiers optional="true" write="true" read="true" unique="false"/>
+						<persistence type="property"/>
+					</attribute>
+				</attributes>
 			</itemtype>
 
 			<itemtype code="PDPParagraphComponent" autocreate="true" generate="true" extends="CMSParagraphComponent">
