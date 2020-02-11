@@ -27,7 +27,11 @@ public class CategoryProductsCarouselComponentController extends AbstractCMSAddO
         String categoryCode = component.getCategoryCode();
 
         final List<ProductData> products = new ArrayList<>();
-        products.addAll(trainingProductFacade.getProductsForCategory(categoryCode));
+
+        List<ProductData> productsFacade = trainingProductFacade.getProductsForCategory(categoryCode);
+        for (int i =0; i<10; i++) {
+            products.add(productsFacade.get(i));
+        }
 
         model.addAttribute("title", component.getTitle());
         model.addAttribute("productData", products);
