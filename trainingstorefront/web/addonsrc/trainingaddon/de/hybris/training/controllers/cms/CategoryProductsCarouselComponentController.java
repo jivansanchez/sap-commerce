@@ -17,6 +17,7 @@ import java.util.List;
 @RequestMapping("/view/" + CategoryProductsCarouselComponentModel._TYPECODE+ "Controller")
 public class CategoryProductsCarouselComponentController extends AbstractCMSAddOnComponentController<CategoryProductsCarouselComponentModel> {
 
+    final int TEN_PRODUCTS = 10;
 
     @Resource
     private TrainingProductFacade trainingProductFacade;
@@ -25,10 +26,13 @@ public class CategoryProductsCarouselComponentController extends AbstractCMSAddO
     @Override
     protected void fillModel(HttpServletRequest request, Model model, CategoryProductsCarouselComponentModel component) {
         String categoryCode = component.getCategoryCode();
-
+        int counter = 0;
         final List<ProductData> products = new ArrayList<>();
-        products.addAll(trainingProductFacade.getProductsForCategory(categoryCode));
 
+        while (counter <= TEN_PRODUCTS) {
+            products.add(trainingProductFacade.getProductsForCategory(categoryCode).get(counter));
+            counter++;
+        }
         model.addAttribute("title", component.getTitle());
         model.addAttribute("productData", products);
     }
