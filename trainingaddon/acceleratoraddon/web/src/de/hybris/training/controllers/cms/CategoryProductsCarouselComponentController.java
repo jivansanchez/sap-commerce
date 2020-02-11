@@ -4,6 +4,7 @@ import de.hybris.platform.addonsupport.controllers.cms.AbstractCMSAddOnComponent
 import de.hybris.platform.commercefacades.product.data.ProductData;
 import de.hybris.training.facade.TrainingProductFacade;
 import de.hybris.training.model.CategoryProductsCarouselComponentModel;
+import org.apache.commons.collections.CollectionUtils;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -27,10 +28,14 @@ public class CategoryProductsCarouselComponentController extends AbstractCMSAddO
         String categoryCode = component.getCategoryCode();
 
         final List<ProductData> products = new ArrayList<>();
+        Integer maxProducts = component.getMaxProducts();
 
         List<ProductData> productsFacade = trainingProductFacade.getProductsForCategory(categoryCode);
-        for (int i =0; i<10; i++) {
-            products.add(productsFacade.get(i));
+
+        if(maxProducts != null && CollectionUtils.isNotEmpty(productsFacade)){
+            for (int i =0; i<maxProducts; i++) {
+                products.add(productsFacade.get(i));
+            }
         }
 
         model.addAttribute("title", component.getTitle());
