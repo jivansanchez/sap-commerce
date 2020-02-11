@@ -21,5 +21,4 @@ public final class TrainingaddonWebConstants // NOSONAR
 	}
 
 	// implement here constants used by this extension
-
 }
