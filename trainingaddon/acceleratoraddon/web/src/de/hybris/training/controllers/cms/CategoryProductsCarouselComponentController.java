@@ -12,7 +12,6 @@ import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import java.util.ArrayList;
 import java.util.List;
-import de.hybris.training.constants.TrainingaddonWebConstants;
 
 @Controller(CategoryProductsCarouselComponentModel._TYPECODE+ "Controller")
 @RequestMapping("/view/" + CategoryProductsCarouselComponentModel._TYPECODE+ "Controller")
