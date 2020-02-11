@@ -1,7 +1,7 @@
 /*
  * ----------------------------------------------------------------
  * --- WARNING: THIS FILE IS GENERATED AND WILL BE OVERWRITTEN! ---
- * --- Generated at Feb 10, 2020 4:30:13 AM                     ---
+ * --- Generated at Feb 10, 2020 9:29:40 PM                     ---
  * ----------------------------------------------------------------
  *  
  * [y] hybris Platform
@@ -32,6 +32,7 @@ import de.hybris.training.core.jalo.ApparelStyleVariantProduct;
 import de.hybris.training.core.jalo.CustomerStoreLogin;
 import de.hybris.training.core.jalo.ElectronicsColorVariantProduct;
 import de.hybris.training.core.jalo.NewsLetterOptions;
+import de.hybris.training.core.jalo.TripodsAdditionalData;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.LinkedHashSet;
@@ -222,6 +223,32 @@ public abstract class GeneratedTrainingCoreManager extends Extension
 	public NewsLetterOptions createNewsLetterOptions(final Map attributeValues)
 	{
 		return createNewsLetterOptions( getSession().getSessionContext(), attributeValues );
+	}
+	
+	public TripodsAdditionalData createTripodsAdditionalData(final SessionContext ctx, final Map attributeValues)
+	{
+		try
+		{
+			ComposedType type = getTenant().getJaloConnection().getTypeManager().getComposedType( TrainingCoreConstants.TC.TRIPODSADDITIONALDATA );
+			return (TripodsAdditionalData)type.newInstance( ctx, attributeValues );
+		}
+		catch( JaloGenericCreationException e)
+		{
+			final Throwable cause = e.getCause();
+			throw (cause instanceof RuntimeException ?
+			(RuntimeException)cause
+			:
+			new JaloSystemException( cause, cause.getMessage(), e.getErrorCode() ) );
+		}
+		catch( JaloBusinessException e )
+		{
+			throw new JaloSystemException( e ,"error creating TripodsAdditionalData : "+e.getMessage(), 0 );
+		}
+	}
+	
+	public TripodsAdditionalData createTripodsAdditionalData(final Map attributeValues)
+	{
+		return createTripodsAdditionalData( getSession().getSessionContext(), attributeValues );
 	}
 	
 	@Override
