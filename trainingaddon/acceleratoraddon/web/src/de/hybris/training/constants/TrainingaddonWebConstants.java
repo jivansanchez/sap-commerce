@@ -21,9 +21,5 @@ public final class TrainingaddonWebConstants // NOSONAR
 	}
 
 	// implement here constants used by this extension
-	final static int TEN_PRODUCTS = 10;
 
-	public static int getTenProducts() {
-		return TEN_PRODUCTS;
-	}
 }
