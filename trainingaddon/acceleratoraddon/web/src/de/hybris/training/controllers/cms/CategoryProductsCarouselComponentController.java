@@ -29,7 +29,6 @@ public class CategoryProductsCarouselComponentController extends AbstractCMSAddO
 
         final List<ProductData> products = new ArrayList<>();
         int counter = 0;
-        component.setMaxProducts(10);
         while (counter <= component.getMaxProducts()) {
             products.add(trainingProductFacade.getProductsForCategory(categoryCode).get(counter));
             counter++;
