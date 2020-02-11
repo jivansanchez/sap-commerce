@@ -12,6 +12,7 @@ import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import java.util.ArrayList;
 import java.util.List;
+import de.hybris.training.constants.TrainingaddonWebConstants;
 
 @Controller(CategoryProductsCarouselComponentModel._TYPECODE+ "Controller")
 @RequestMapping("/view/" + CategoryProductsCarouselComponentModel._TYPECODE+ "Controller")
@@ -27,7 +28,11 @@ public class CategoryProductsCarouselComponentController extends AbstractCMSAddO
         String categoryCode = component.getCategoryCode();
 
         final List<ProductData> products = new ArrayList<>();
-        products.addAll(trainingProductFacade.getProductsForCategory(categoryCode));
+        int counter = 0;
+        while (counter <= TrainingaddonWebConstants.getTenProducts()) {
+            products.add(trainingProductFacade.getProductsForCategory(categoryCode).get(counter));
+            counter++;
+        }
 
         model.addAttribute("title", component.getTitle());
         model.addAttribute("productData", products);
