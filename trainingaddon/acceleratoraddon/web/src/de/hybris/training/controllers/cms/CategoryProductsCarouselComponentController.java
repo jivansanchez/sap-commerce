@@ -29,7 +29,9 @@ public class CategoryProductsCarouselComponentController extends AbstractCMSAddO
         final List<ProductData> products = new ArrayList<>();
         products.addAll(trainingProductFacade.getProductsForCategory(categoryCode));
 
+        int maxProducts = component.getMaxProducts().intValue();
+
         model.addAttribute("title", component.getTitle());
-        model.addAttribute("productData", products);
+        model.addAttribute("productData", products.subList(0,maxProducts));
     }
 }
