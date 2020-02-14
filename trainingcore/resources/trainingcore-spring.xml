@@ -562,4 +562,14 @@
 		<property name="newsLetterDAO" ref="newsLetterDAO"/>
 	</bean>
 
+	<alias name="defaultContactPreferencesDAO" alias="contactPreferencesDAO"/>
+	<bean id="defaultContactPreferencesDAO" class="de.hybris.training.core.dao.impl.DefaultContactPreferencesDAO">
+		<constructor-arg name="typecode" value="11203"/>
+	</bean>
+
+	<alias name="defaultContactPreferencesOptionsService" alias="contactPreferencesOptionsService"/>
+	<bean id="defaultContactPreferencesOptionsService" class="de.hybris.training.core.services.impl.DefaultContactPreferencesOptionsService">
+		<property name="contactPreferencesDAO" ref="contactPreferencesDAO"/>
+	</bean>
+
 </beans>

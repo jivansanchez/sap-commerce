@@ -58,6 +58,7 @@ import de.hybris.platform.servicelayer.exceptions.AmbiguousIdentifierException;
 import de.hybris.platform.servicelayer.exceptions.ModelNotFoundException;
 import de.hybris.platform.servicelayer.exceptions.UnknownIdentifierException;
 import de.hybris.platform.util.Config;
+import de.hybris.training.facades.contactPreferences.ContactPreferencesOptionsFacade;
 import de.hybris.training.facades.newsletter.NewsLetterOptionsFacade;
 import de.hybris.training.facades.newsletter.data.NewsLetterOptionData;
 import de.hybris.training.storefront.controllers.ControllerConstants;
@@ -197,6 +198,9 @@ public class AccountPageController extends AbstractSearchPageController
 
 	@Resource(name = "newsLetterOptionsFacade")
 	protected NewsLetterOptionsFacade newsLetterOptionsFacade;
+
+	@Resource(name = "contactPreferencesOptionsFacade")
+	protected ContactPreferencesOptionsFacade contactPreferencesOptionsFacade;
 
 	@Resource(name = "addressDataUtil")
 	private AddressDataUtil addressDataUtil;
@@ -495,6 +499,9 @@ public class AccountPageController extends AbstractSearchPageController
 		model.addAttribute("updateProfileForm", updateProfileForm);
 		model.addAttribute("selectedNewsLetterOptions", customerData.getNewsLetterOptions());
 		model.addAttribute("avilableNewsLetterOptions", newsLetterOptionsFacade.getAllNewsLetterOptions());
+
+		model.addAttribute("selectedContactPreferencesOptions", customerData.getContactPreferencesOptions());
+		model.addAttribute("avilableContactPreferencesOptions", contactPreferencesOptionsFacade.getAllContactPreferencesOptions());
 
 		storeCmsPageInModel(model, getContentPageForLabelOrId(UPDATE_PROFILE_CMS_PAGE));
 		setUpMetaDataForContentPage(model, getContentPageForLabelOrId(UPDATE_PROFILE_CMS_PAGE));

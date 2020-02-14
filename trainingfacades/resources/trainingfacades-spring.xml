@@ -194,12 +194,27 @@
 	<bean id="newsLetterOptionsPopulator" class="de.hybris.training.facades.populators.NewsLetterOptionsPopulator" >
 	</bean>
 
+	<alias name="contactPreferencesOptionsPopulator" alias="contactPreferencesOptionsPopulator"/>
+	<bean id="contactPreferencesOptionsPopulator" class="de.hybris.training.facades.populators.ContactPreferencesOptionsPopulator" >
+	</bean>
+
+
 	<alias name="defaultNewsLetterOptionsConverter" alias="newsLetterOptionsConverter"/>
 	<bean id="defaultNewsLetterOptionsConverter" parent="abstractPopulatingConverter">
 		<property name="targetClass" value="de.hybris.training.facades.newsletter.data.NewsLetterOptionData"/>
 		<property name="populators">
 			<list>
 				<ref bean="newsLetterOptionsPopulator"/>
+			</list>
+		</property>
+	</bean>
+
+	<alias name="defaultContactPreferencesOptionsConverter" alias="contactPreferencesOptionsConverter"/>
+	<bean id="defaultContactPreferencesOptionsConverter" parent="abstractPopulatingConverter">
+		<property name="targetClass" value="de.hybris.training.facades.contactpreferences.data.ContactPreferencesOptionsData"/>
+		<property name="populators">
+			<list>
+				<ref bean="contactPreferencesOptionsPopulator"/>
 			</list>
 		</property>
 	</bean>
@@ -213,13 +228,31 @@
 		<property name="modelService" ref="modelService"/>
 	</bean>
 
+	<alias name="defaultContactPreferencesOptionsFacade" alias="contactPreferencesOptionsFacade"/>
+	<bean id="defaultContactPreferencesOptionsFacade" class="de.hybris.training.facades.contactPreferences.impl.DefaultContactPreferencesOptionsFacade">
+		<property name="contactPreferencesOptionsDataConverter" ref="contactPreferencesOptionsConverter"/>
+		<property name="contactPreferencesOptionsService" ref="contactPreferencesOptionsService"/>
+		<property name="userService" ref="userService"/>
+		<property name="modelService" ref="modelService"/>
+	</bean>
+
+
 	<alias name="customerNewsLetterOptionsPopulator" alias="customerNewsLetterOptionsPopulator"/>
 	<bean id="customerNewsLetterOptionsPopulator" class="de.hybris.training.facades.populators.CustomerNewsLetterOptionsPopulator" >
+	</bean>
+
+	<alias name="customerContactPreferencesOptionsPopulator" alias="customerContactPreferencesOptionsPopulator"/>
+	<bean id="customerContactPreferencesOptionsPopulator" class="de.hybris.training.facades.populators.CustomerContactPreferencesOptionsPopulator" >
 	</bean>
 
 	<bean parent="modifyPopulatorList">
 		<property name="list" ref="customerConverter"/>
 		<property name="add" ref="customerNewsLetterOptionsPopulator"/>
+	</bean>
+
+	<bean parent="modifyPopulatorList">
+		<property name="list" ref="customerConverter"/>
+		<property name="add" ref="customerContactPreferencesOptionsPopulator"/>
 	</bean>
 
 	<alias name="customerNewsLetterOptionsReversePopulator" alias="customerNewsLetterOptionsReversePopulator"/>

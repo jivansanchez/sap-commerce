@@ -26,8 +26,15 @@
 		<property name="description" type="String"/>
 	</bean>
 
+	<bean class="de.hybris.training.facades.contactpreferences.data.ContactPreferencesOptionsData">
+		<property name="code" type="String"/>
+		<property name="name" type="String"/>
+		<property name="description" type="String"/>
+	</bean>
+
 	<bean class="de.hybris.platform.commercefacades.user.data.CustomerData">
 		<property name="newsLetterOptions" type="java.util.Set&lt;de.hybris.training.facades.newsletter.data.NewsLetterOptionData>"/>
+		<property name="contactPreferencesOptions" type="java.util.Set&lt;de.hybris.training.facades.contactpreferences.data.ContactPreferencesOptionsData>"/>
 	</bean>
 
 </beans>

@@ -34,6 +34,7 @@
                         </div>
                     </div>
 
+
                     <c:forEach var="newsLetterOption" items="${avilableNewsLetterOptions}" varStatus="status">
                         <c:set var="checked" value=""/>
                         <c:forEach var="newsLetterOptionSelected" items="${selectedNewsLetterOptions}" varStatus="statusSelected">
@@ -53,23 +54,23 @@
                     <div class="account-section-header">
                         <div class="row">
                             <div class="col-md-6">
-                                <spring:theme code="text.account.profile.updatePersonalDetails.newsletteroptions"/>
+                                <spring:theme code="text.account.profile.updatePersonalDetails.contactPreferencesOptions"/>
                             </div>
                         </div>
                     </div>
 
-                    <c:forEach var="newsLetterOption" items="${avilableNewsLetterOptions}" varStatus="status">
+                    <c:forEach var="contactPreferencesOption" items="${avilableContactPreferencesOptions}" varStatus="status">
                         <c:set var="checked" value=""/>
-                        <c:forEach var="newsLetterOptionSelected" items="${selectedNewsLetterOptions}" varStatus="statusSelected">
-                            <c:if test="${newsLetterOptionSelected.code eq newsLetterOption.code}">
+                        <c:forEach var="contactPreferencesOptionSelected" items="${selectedContactPreferencesOptions}" varStatus="statusSelected">
+                            <c:if test="${contactPreferencesOptionSelected.code eq contactPreferencesOption.code}">
                                 <c:set var="checked" value="checked"/>
                             </c:if>
                         </c:forEach>
-                        <form:checkbox id="${newsLetterOption.code}"
-                                       label="${newsLetterOption.name}"
-                                       value="${newsLetterOption.code}"
-                                       path="selectedNewsLetterOptions"
-                                       cssClass="newsLetterOption"
+                        <form:checkbox id="${contactPreferencesOption.code}"
+                                       label="${contactPreferencesOption.name}"
+                                       value="${contactPreferencesOption.code}"
+                                       path="selectedContactPreferencesOptions"
+                                       cssClass="contactPreferencesOption"
                                        checked="${checked}"/> &nbsp;
                     </c:forEach>
 

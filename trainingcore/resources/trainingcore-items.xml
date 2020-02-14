@@ -40,6 +40,11 @@
             <sourceElement qualifier="customer" type="Customer" cardinality="many" />
             <targetElement qualifier="newsLetterOption" type="NewsLetterOptions" cardinality="many" collectiontype="set"/>
         </relation>
+        <relation code="Customer2Contacts" generate="true" localized="false" autocreate="true">
+            <deployment table="Customer2Contacts" typecode="11209" />
+            <sourceElement qualifier="customer" type="Customer" cardinality="many" />
+            <targetElement qualifier="contactPreferencesOption" type="ContactPreferencesOptions" cardinality="many" collectiontype="set"/>
+        </relation>
     </relations>
 
     <itemtypes>
@@ -145,6 +150,35 @@
                 </attributes>
                 <indexes>
                     <index name="NewsLetterOptions_idx">
+                        <key attribute="code"/>
+                    </index>
+                </indexes>
+            </itemtype>
+            <itemtype code="ContactPreferencesOptions" extends="GenericItem" autocreate="true" generate="true"
+                      jaloclass="de.hybris.training.core.jalo.ContactPreferencesOptions">
+                <deployment table="contactoptions" typecode="11203"/>
+                <attributes>
+                    <attribute qualifier="code" type="java.lang.String">
+                        <description>Code of the contact preferences option.</description>
+                        <modifiers unique="true" read="true" write="true" optional="false"/>
+                        <persistence type="property"/>
+                        <defaultvalue></defaultvalue>
+                    </attribute>
+                    <attribute qualifier="name" type="localized:java.lang.String">
+                        <description>Name of the contact preferences option.</description>
+                        <modifiers unique="true" read="true" write="true" optional="false"/>
+                        <persistence type="property"/>
+                        <defaultvalue></defaultvalue>
+                    </attribute>
+                    <attribute qualifier="description" type="localized:java.lang.String">
+                        <description>Description of the contact preferences option.</description>
+                        <modifiers unique="true" read="true" write="true" optional="false"/>
+                        <persistence type="property"/>
+                        <defaultvalue></defaultvalue>
+                    </attribute>
+                </attributes>
+                <indexes>
+                    <index name="ContactPreferencesOptions_idx">
                         <key attribute="code"/>
                     </index>
                 </indexes>
