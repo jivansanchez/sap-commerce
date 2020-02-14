@@ -18,6 +18,6 @@ public interface ContactPreferencesOptionsFacade {
      * @param customerData
      * @return
      */
-    //Boolean saveContactPreferencesOptionsForCurrentCustomer(CustomerData customerData);
+    Boolean saveContactPreferencesOptionsForCurrentCustomer(CustomerData customerData);
 
 }

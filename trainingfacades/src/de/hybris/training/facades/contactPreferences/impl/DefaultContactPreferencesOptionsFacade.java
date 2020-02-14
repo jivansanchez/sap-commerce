@@ -19,13 +19,14 @@ public class DefaultContactPreferencesOptionsFacade implements ContactPreference
     private ModelService modelService;
     private ContactPreferencesOptionsService contactPreferencesOptionsService;
     private Converter<ContactPreferencesOptionsModel, ContactPreferencesOptionsData> contactPreferencesOptionsDataConverter;
+    private Converter<CustomerData, CustomerModel> contactPreferencesOptionsReverseConverter;
 
     @Override
     public List<ContactPreferencesOptionsData> getAllContactPreferencesOptions() {
         return this.getContactPreferencesOptionsDataConverter()
                 .convertAll(this.getContactPreferencesOptionsService().getAllContactPreferencesOptions());
     }
-/*
+
     @Override
     public Boolean saveContactPreferencesOptionsForCurrentCustomer(CustomerData customerData) {
         CustomerModel customerModel = (CustomerModel)this.userService.getCurrentUser();
@@ -36,7 +37,7 @@ public class DefaultContactPreferencesOptionsFacade implements ContactPreference
             modelService.save(customerModel);
             return Boolean.TRUE;
         }
-    }*/
+    }
 
     public ContactPreferencesOptionsService getContactPreferencesOptionsService() {
         return contactPreferencesOptionsService;
@@ -64,7 +65,7 @@ public class DefaultContactPreferencesOptionsFacade implements ContactPreference
     public void setUserService(UserService userService) {
         this.userService = userService;
     }
-/*
+
     public Converter<CustomerData, CustomerModel> getContactPreferencesOptionsReverseConverter() {
         return contactPreferencesOptionsReverseConverter;
     }
@@ -72,7 +73,7 @@ public class DefaultContactPreferencesOptionsFacade implements ContactPreference
     @Required
     public void setContactPreferencesOptionsReverseConverter(Converter<CustomerData, CustomerModel> contactPreferencesOptionsReverseConverter) {
         this.contactPreferencesOptionsReverseConverter = contactPreferencesOptionsReverseConverter;
-    }*/
+    }
 
     public ModelService getModelService() {
         return modelService;

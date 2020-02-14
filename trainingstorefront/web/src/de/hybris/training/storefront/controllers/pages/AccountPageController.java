@@ -543,6 +543,7 @@ public class AccountPageController extends AbstractSearchPageController
 			{
 				customerFacade.updateProfile(customerData);
 				newsLetterOptionsFacade.saveNewsLetterOptionsForCurrentCustomer(customerData);
+				contactPreferencesOptionsFacade.saveContactPreferencesOptionsForCurrentCustomer(customerData);
 				GlobalMessages.addFlashMessage(redirectAttributes, GlobalMessages.CONF_MESSAGES_HOLDER,
 						"text.account.profile.confirmationUpdated", null);
 

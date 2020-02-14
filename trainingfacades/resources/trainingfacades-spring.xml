@@ -232,6 +232,7 @@
 	<bean id="defaultContactPreferencesOptionsFacade" class="de.hybris.training.facades.contactPreferences.impl.DefaultContactPreferencesOptionsFacade">
 		<property name="contactPreferencesOptionsDataConverter" ref="contactPreferencesOptionsConverter"/>
 		<property name="contactPreferencesOptionsService" ref="contactPreferencesOptionsService"/>
+		<property name="contactPreferencesOptionsReverseConverter" ref="customerContactOptionsReverseConverter"/>
 		<property name="userService" ref="userService"/>
 		<property name="modelService" ref="modelService"/>
 	</bean>
@@ -270,4 +271,18 @@
 		</property>
 	</bean>
 
+	<alias name="pageController" alias="customerContactPreferencesOptionsReversePopulator"/>
+	<bean id="customerContactPreferencesOptionsReversePopulator" class="de.hybris.training.facades.populators.CustomerContactPreferencesOptionsReversePopulator" >
+		<property name="contactPreferencesOptionsService" ref="contactPreferencesOptionsService"/>
+	</bean>
+
+	<alias name="defaultCustomerContactOptionsReverseConverter" alias="customerContactOptionsReverseConverter" />
+	<bean id="defaultCustomerContactOptionsReverseConverter" parent="abstractPopulatingConverter">
+		<property name="targetClass" value="de.hybris.platform.core.model.user.CustomerModel" />
+		<property name="populators">
+			<list>
+				<ref bean="customerContactPreferencesOptionsReversePopulator" />
+			</list>
+		</property>
+	</bean>
 </beans>
