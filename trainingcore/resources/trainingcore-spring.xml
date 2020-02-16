@@ -562,4 +562,8 @@
 		<property name="newsLetterDAO" ref="newsLetterDAO"/>
 	</bean>
 
+	<bean id="productReviewsProvider" class="de.hybris.training.core.search.solrfacetsearch.provider.impl.ProductReviewsProvider">
+		<property name="fieldNameProvider" ref="solrFieldNameProvider"/>
+	</bean>
+
 </beans>
