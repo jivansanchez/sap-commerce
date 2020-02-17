@@ -35,6 +35,14 @@ eclipsebin
 Collapse
 
 
+trainingbackoffice/build.xml
+trainingcore/build.xml
+trainingfacades/build.xml
+trainingfulfilmentprocess/build.xml
+traininginitialdata/build.xml
+trainingstorefront/build.xml
+
+
 
 
 

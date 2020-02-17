@@ -59,6 +59,7 @@ import de.hybris.platform.servicelayer.exceptions.ModelNotFoundException;
 import de.hybris.platform.servicelayer.exceptions.UnknownIdentifierException;
 import de.hybris.platform.util.Config;
 import de.hybris.training.facades.contactPreferences.ContactPreferencesOptionsFacade;
+import de.hybris.training.facades.contactpreferences.data.ContactPreferencesOptionsData;
 import de.hybris.training.facades.newsletter.NewsLetterOptionsFacade;
 import de.hybris.training.facades.newsletter.data.NewsLetterOptionData;
 import de.hybris.training.storefront.controllers.ControllerConstants;
@@ -527,6 +528,7 @@ public class AccountPageController extends AbstractSearchPageController
 		customerData.setUid(currentCustomerData.getUid());
 		customerData.setDisplayUid(currentCustomerData.getDisplayUid());
 		customerData.setNewsLetterOptions(this.createNewsLetterOptionsData(updateProfileForm.getSelectedNewsLetterOptions()));
+		customerData.setContactPreferencesOptions(this.createContactPreferencesOptionsData(updateProfileForm.getSelectedContactPreferencesOptions()));
 
 		model.addAttribute(TITLE_DATA_ATTR, userFacade.getTitles());
 
@@ -1017,5 +1019,15 @@ public class AccountPageController extends AbstractSearchPageController
 			newsLetterOptionDataSet.add(newsLetterOptionData);
 		}
 		return newsLetterOptionDataSet;
+	}
+
+	protected Set<ContactPreferencesOptionsData> createContactPreferencesOptionsData(String [] codes) {
+		Set<ContactPreferencesOptionsData> contactPreferencesOptionsDataSet = new HashSet<>();
+		for (String code: codes) {
+			ContactPreferencesOptionsData contactPreferencesOptionsData = new ContactPreferencesOptionsData();
+			contactPreferencesOptionsData.setCode(code);
+			contactPreferencesOptionsDataSet.add(contactPreferencesOptionsData);
+		}
+		return contactPreferencesOptionsDataSet;
 	}
 }
