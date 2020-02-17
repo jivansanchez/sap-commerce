@@ -1,0 +1,28 @@
+# -----------------------------------------------------------------------
+# [y] hybris Platform
+#
+# Copyright (c) 2018 SAP SE or an SAP affiliate company.  All rights reserved.
+#
+# This software is the confidential and proprietary information of SAP
+# ("Confidential Information"). You shall not disclose such Confidential
+# Information and shall use it only in accordance with the terms of the
+# license agreement you entered into with SAP.
+# -----------------------------------------------------------------------
+$contentCatalog=electronicsContentCatalog
+$contentCV=catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCatalog]),CatalogVersion.version[default=Staged])[default=$contentCatalog:Staged]
+$product-catalog=electronicsProductCatalog
+$productCV=catalogVersion(CatalogVersion.catalog(Catalog.id[default=$product-catalog]),CatalogVersion.version[default=Staged])[default=$product-catalog:Staged]
+
+INSERT_UPDATE CategoryProductsCarouselComponent;$contentCV[unique=true];uid[unique=true];name;categorycode(code,$productCV);scroll(code);title;maxProducts;popup;&componentRef
+;;PDPCategoryProductsCarouselComponent;PDP Category Products Carousel Component;brand_5;allVisible;"Category Related Products";10;false;PDPCategoryProductsCarouselComponent
+
+INSERT_UPDATE PDPParagraphComponent;$contentCV[unique=true];uid[unique=true];name;content;&componentRef
+;;PDPParagraphComponent;PDP Paragraph Component;"<div class=""cms-content order-expired""> <div class=""information_message neutral""> <span class=""single""> </span><p>Diese Seite ist abgelaufen.</p></div><h2>Sehr geehrte Kundin/Sehr geehrter Kunde,</h2><p>Bestellstatus für Gastnutzer werden nur 3 Monate ab Bestellung aufbewahrt.<br>Falls Sie keine Lieferung erhalten haben oder eine Anfrage haben, wenden Sie sich bitte an unseren Kundenservice.</p><h3>Halten Sie bitte Folgendes bereit:</h3><ul class=""bullet-list""><li>Ihren Namen</li><li>Bestellnummer (Ihre Bestellnummer finden Sie in der Bestätigungs-E-Mail, die kurz nach Ihrer Bestellung versendet wurde.)</li><li>Lieferadresse oder Ort der Verkaufsstelle zur Abholung</li></ul><p>Unsere Kundenservice-Mitarbeiter teilen Ihnen gerne Ihren Bestellstatus mit.</p><p class=""cms-content-emphasized-big"">Vielen Dank für Ihren Einkauf im hybrisstore.</p></div>";PDPParagraphComponent;
+
+INSERT_UPDATE ContentSlot;$contentCV[unique=true];uid[unique=true];name;active;cmsComponents(&componentRef)
+;;Section5Slot-ProductDetails;Section5 Slot for ProductDetails;true;PDPCategoryProductsCarouselComponent
+;;Section5ASlot-ProductDetails;Section5A Slot for ProductDetails;true;PDPParagraphComponent
+
+INSERT_UPDATE ContentSlotForPage;$contentCV[unique=true];uid[unique=true];position[unique=true];page(uid,$contentCV)[unique=true][default='productDetails'];contentSlot(uid,$contentCV)[unique=true]
+;;Section5-ProductDetails;Section5;;Section5Slot-ProductDetails
+;;Section5A-ProductDetails;Section5A;;Section5ASlot-ProductDetails

@@ -570,6 +570,9 @@
 	<alias name="defaultContactPreferencesOptionsService" alias="contactPreferencesOptionsService"/>
 	<bean id="defaultContactPreferencesOptionsService" class="de.hybris.training.core.services.impl.DefaultContactPreferencesOptionsService">
 		<property name="contactPreferencesDAO" ref="contactPreferencesDAO"/>
+
+  <bean id="productReviewsProvider" class="de.hybris.training.core.search.solrfacetsearch.provider.impl.ProductReviewsProvider">
+		<property name="fieldNameProvider" ref="solrFieldNameProvider"/>
 	</bean>
 
 </beans>
