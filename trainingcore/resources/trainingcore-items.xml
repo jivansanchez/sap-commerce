@@ -195,6 +195,45 @@
                     </index>
                 </indexes>
             </itemtype>
+            
+            <itemtype code="ProductSubscriptions" generate="true" autocreate="true" extends="GenericItem"
+                      jaloclass="de.hybris.training.core.jalo.ProductSubscriptions">
+                <deployment table="ProductSubscriptions" typecode="11210"/>
+                <attributes>
+                    <attribute qualifier="code" type="java.lang.String">
+                        <persistence type="property"/>
+                        <modifiers/>
+                    </attribute>
+                    <attribute qualifier="description" type="java.lang.String">
+                        <persistence type="property"/>
+                        <modifiers/>
+                    </attribute>
+                    <attribute qualifier="customer" type="Customer">
+                        <persistence type="property"/>
+                        <modifiers/>
+                    </attribute>
+                    <attribute qualifier="product" type="Product">
+                        <persistence type="property"/>
+                        <modifiers/>
+                    </attribute>
+                    <attribute qualifier="quantity" type="java.lang.Integer">
+                        <persistence type="property"/>
+                        <modifiers/>
+                    </attribute>
+                    <attribute qualifier="deliveryDate" type="java.util.Date">
+                        <persistence type="property"/>
+                        <modifiers/>
+                    </attribute>
+                    <attribute qualifier="paymentCode" type="java.lang.String">
+                        <persistence type="property"/>
+                        <modifiers/>
+                    </attribute>
+                    <attribute qualifier="bankCode" type="java.lang.String">
+                        <persistence type="property"/>
+                        <modifiers/>
+                    </attribute>
+                </attributes>
+            </itemtype>
         </typegroup>
 
     </itemtypes>

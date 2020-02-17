@@ -1,7 +1,7 @@
 /*
  * ----------------------------------------------------------------
  * --- WARNING: THIS FILE IS GENERATED AND WILL BE OVERWRITTEN! ---
- * --- Generated at Feb 10, 2020 4:30:13 AM                     ---
+ * --- Generated at Feb 16, 2020 1:58:11 PM                     ---
  * ----------------------------------------------------------------
  *  
  * [y] hybris Platform
@@ -32,6 +32,7 @@ import de.hybris.training.core.jalo.ApparelStyleVariantProduct;
 import de.hybris.training.core.jalo.CustomerStoreLogin;
 import de.hybris.training.core.jalo.ElectronicsColorVariantProduct;
 import de.hybris.training.core.jalo.NewsLetterOptions;
+import de.hybris.training.core.jalo.ProductSubscriptions;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.LinkedHashSet;
@@ -222,6 +223,32 @@ public abstract class GeneratedTrainingCoreManager extends Extension
 	public NewsLetterOptions createNewsLetterOptions(final Map attributeValues)
 	{
 		return createNewsLetterOptions( getSession().getSessionContext(), attributeValues );
+	}
+	
+	public ProductSubscriptions createProductSubscriptions(final SessionContext ctx, final Map attributeValues)
+	{
+		try
+		{
+			ComposedType type = getTenant().getJaloConnection().getTypeManager().getComposedType( TrainingCoreConstants.TC.PRODUCTSUBSCRIPTIONS );
+			return (ProductSubscriptions)type.newInstance( ctx, attributeValues );
+		}
+		catch( JaloGenericCreationException e)
+		{
+			final Throwable cause = e.getCause();
+			throw (cause instanceof RuntimeException ?
+			(RuntimeException)cause
+			:
+			new JaloSystemException( cause, cause.getMessage(), e.getErrorCode() ) );
+		}
+		catch( JaloBusinessException e )
+		{
+			throw new JaloSystemException( e ,"error creating ProductSubscriptions : "+e.getMessage(), 0 );
+		}
+	}
+	
+	public ProductSubscriptions createProductSubscriptions(final Map attributeValues)
+	{
+		return createProductSubscriptions( getSession().getSessionContext(), attributeValues );
 	}
 	
 	@Override

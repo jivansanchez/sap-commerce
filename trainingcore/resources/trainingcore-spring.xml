@@ -566,4 +566,15 @@
 		<property name="fieldNameProvider" ref="solrFieldNameProvider"/>
 	</bean>
 
+	<alias name="defaultProductSubscriptionsDAO" alias="productSubscriptionsDAO"/>
+	<bean id="defaultProductSubscriptionsDAO" class="de.hybris.training.core.dao.impl.DefaultProductSubscriptionsDAO">
+		<constructor-arg name="typecode" value="11210"/>
+	</bean>
+
+	<alias name="defaultProductSubscriptionsService" alias="productSubscriptionsService"/>
+	<bean id="defaultProductSubscriptionsService" class="de.hybris.training.core.services.impl.DefaultProductSubscriptionsService">
+		<property name="modelService" ref="modelService"/>
+		<property name="productSubscriptionsDAO" ref="productSubscriptionsDAO"/>
+	</bean>
+
 </beans>
