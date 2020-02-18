@@ -566,4 +566,10 @@
 		<property name="fieldNameProvider" ref="solrFieldNameProvider"/>
 	</bean>
 
+	<bean id="successOrdersProvider" class="de.hybris.training.core.search.solrfacetsearch.provider.impl.SuccessOrdersProvider">
+		<property name="fieldNameProvider" ref="solrFieldNameProvider"/>
+		<property name="customerAccountService" ref="customerAccountService"/>
+		<property name="baseStoreService" ref="baseStoreService"/>
+	</bean>
+
 </beans>
