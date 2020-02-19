@@ -566,4 +566,8 @@
 		<property name="fieldNameProvider" ref="solrFieldNameProvider"/>
 	</bean>
 
+	<bean id="productSuperCategoriesProvider" class="de.hybris.training.core.search.solrfacetsearch.provider.impl.ProductSuperCategoriesProvider">
+		<property name="fieldNameProvider" ref="solrFieldNameProvider"/>
+	</bean>
+
 </beans>
