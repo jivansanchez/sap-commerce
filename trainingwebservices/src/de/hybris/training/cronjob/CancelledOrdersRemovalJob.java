@@ -55,18 +55,18 @@ public class CancelledOrdersRemovalJob extends AbstractJobPerformable<CaceledOrd
 	@Override
 	public PerformResult perform(final CaceledOrderRemovalCronJobModel job) {
 		try {
-
 			Collection<BaseSiteModel> sites = job.getSites();
 			if (sites == null || sites.isEmpty()) {
 				LOG.warn("There is no sites defined for " + job.getCode());
 				return new PerformResult(CronJobResult.FAILURE, CronJobStatus.FINISHED);
 			}
 
-			List<OrderModel> orders = this.commerceOrderDao.find();
-			if(CollectionUtils.isNotEmpty(orders)){
-				for (BaseSiteModel site : sites) {
-					this.removeOrdersBySite(site, orders);
-				}
+			final Map<String, Object> params = new HashMap<>();
+			params.put(OrderModel.STATUS, OrderStatus.CANCELLED);
+			for (BaseSiteModel site : sites) {
+				params.put(OrderModel.SITE, site);
+				List<OrderModel> orders = this.commerceOrderDao.find(params);
+				this.removeOrdersBySite(orders);
 			}
 
 			return new PerformResult(CronJobResult.SUCCESS, CronJobStatus.FINISHED);
@@ -76,9 +76,9 @@ public class CancelledOrdersRemovalJob extends AbstractJobPerformable<CaceledOrd
 		}
 	}
 
-	private void removeOrdersBySite(BaseSiteModel site, List<OrderModel> orderModels){
-		for (OrderModel orderModel : orderModels) {
-			if (OrderStatus.CANCELLED.equals(orderModel.getStatus()) && orderModel.getSite().getUid().equals(site.getUid())){
+	private void removeOrdersBySite(List<OrderModel> orderModels){
+		if(CollectionUtils.isNotEmpty(orderModels)){
+			for (OrderModel orderModel : orderModels) {
 				this.modelService.remove(orderModel);
 			}
 		}
