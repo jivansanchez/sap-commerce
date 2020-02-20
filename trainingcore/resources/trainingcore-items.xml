@@ -122,7 +122,7 @@
         <typegroup name="Training">
             <itemtype code="NewsLetterOptions" extends="GenericItem" autocreate="true" generate="true"
                       jaloclass="de.hybris.training.core.jalo.NewsLetterOptions">
-                <deployment table="newsletteroptions" typecode="11201"/>
+                <deployment table="newsletteroptions" typecode="11103"/>
                 <attributes>
                     <attribute qualifier="code" type="java.lang.String">
                         <description>Code of the newsLetter option.</description>
@@ -149,6 +149,7 @@
                     </index>
                 </indexes>
             </itemtype>
+
             <itemtype code="MobileAdditionalInfo" extends="GenericItem" autocreate="true" generate="true"
                       jaloclass="de.hybris.training.core.jalo.CustomerStoreLogin">
                 <deployment table="MobileAdditionalInfo" typecode="11205"/>
@@ -195,7 +196,59 @@
                     </index>
                 </indexes>
             </itemtype>
-            
+
+            <itemtype code="TripodsAdditionalData" extends="GenericItem" autocreate="true" generate="true"
+                      jaloclass="de.hybris.training.core.jalo.TripodsAdditionalData">
+                <deployment table="TripodsAdditionalData" typecode="11206"/>
+                <attributes>
+                    <attribute qualifier="code" type="java.lang.String">
+                        <modifiers unique="true" read="true" write="true" optional="false"/>
+                        <persistence type="property"/>
+                        <defaultvalue></defaultvalue>
+                    </attribute>
+                    <attribute qualifier="name" type="java.lang.String">
+                        <modifiers unique="true" read="true" write="true" optional="false"/>
+                        <persistence type="property"/>
+                        <defaultvalue></defaultvalue>
+                    </attribute>
+                    <attribute qualifier="description" type="java.lang.String">
+                        <modifiers unique="true" read="true" write="true" optional="false"/>
+                        <persistence type="property"/>
+                        <defaultvalue></defaultvalue>
+                    </attribute>
+                    <attribute qualifier="brand" type="java.lang.String">
+                        <modifiers unique="false" read="true" write="true" optional="false"/>
+                        <persistence type="property"/>
+                        <defaultvalue></defaultvalue>
+                    </attribute>
+                    <attribute qualifier="color" type="java.lang.String">
+                        <modifiers unique="false" read="true" write="true" optional="false"/>
+                        <persistence type="property"/>
+                        <defaultvalue>Boolean.False</defaultvalue>
+                    </attribute>
+                    <attribute qualifier="isNew" type="java.lang.Boolean">
+                        <modifiers unique="false" read="true" write="true" optional="false"/>
+                        <persistence type="property"/>
+                        <defaultvalue>Boolean.False</defaultvalue>
+                    </attribute>
+                    <attribute qualifier="isPortatil" type="java.lang.Boolean">
+                        <modifiers unique="false" read="true" write="true" optional="false"/>
+                        <persistence type="property"/>
+                        <defaultvalue>Boolean.False</defaultvalue>
+                    </attribute>
+                    <attribute qualifier="height" type="java.lang.Integer">
+                        <modifiers unique="false" read="true" write="true" optional="false"/>
+                        <persistence type="property"/>
+                        <defaultvalue></defaultvalue>
+                    </attribute>
+                </attributes>
+                <indexes>
+                    <index name="TripodsAdditionalData_IDX">
+                        <key attribute="code"/>
+                    </index>
+                </indexes>
+            </itemtype>
+
             <itemtype code="ProductSubscriptions" generate="true" autocreate="true" extends="GenericItem"
                       jaloclass="de.hybris.training.core.jalo.ProductSubscriptions">
                 <deployment table="ProductSubscriptions" typecode="11210"/>
@@ -234,7 +287,20 @@
                     </attribute>
                 </attributes>
             </itemtype>
-        </typegroup>
 
+            <itemtype code="CanceledOrdersRemovalCronJob" autocreate="true"
+                      generate="true" extends="CronJob"
+                      jaloclass="de.hybris.training.jalo.CanceledOrdersCronJob">
+                <attributes>
+                    <attribute type="BaseSiteCollection" qualifier="sites">
+                        <modifiers/>
+                        <persistence type="property"/>
+                        <description>BaseSites for which canceled orders should be removed</description>
+                    </attribute>
+                </attributes>
+            </itemtype>
+
+
+        </typegroup>
     </itemtypes>
 </items>

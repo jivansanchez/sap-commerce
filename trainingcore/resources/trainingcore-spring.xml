@@ -577,4 +577,10 @@
 		<property name="productSubscriptionsDAO" ref="productSubscriptionsDAO"/>
 	</bean>
 
+	<!-- Canceled Orders cleaner -->
+	<bean id="canceledOrdersRemovalJob" class="de.hybris.training.core.cronjob.CanceledOrdersRemovalJob"
+		  parent="abstractJobPerformable">
+		<property name="commerceOrderDao" ref="commerceOrderDao"/>
+	</bean>
+
 </beans>
