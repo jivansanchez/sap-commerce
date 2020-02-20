@@ -26,3 +26,12 @@ INSERT_UPDATE Trigger;cronJob(code)[unique=true];second;minute;hour;day;month;ye
 # This is only sample cron job but to make it work correctly you need to set also sites property for it
 INSERT_UPDATE OldCartRemovalCronJob;code[unique=true];job(code);cartRemovalAge;anonymousCartRemovalAge;sessionLanguage(isoCode)[default=en]
 ;oldCartRemovalCronJob;oldCartRemovalJob;2419200;1209600
+
+INSERT_UPDATE Trigger;cronJob(code)[unique=true];second;minute;hour;day;month;year;relative;active;maxAcceptableDelay
+                     ;oldCartRemovalCronJob;0;0;3;-1;-1;-1;false;false;-1
+
+INSERT_UPDATE CancelledOrdersRemovalCronJob;code[unique=true];job(code);sessionLanguage(isoCode)[default=en]
+;cancelledOrdersRemovalCronJob;cancelledOrdersRemovalJob;
+
+INSERT_UPDATE Trigger;cronJob(code)[unique=true];second;minute;hour;day;month;year;relative;active;maxAcceptableDelay
+;cancelledOrdersRemovalCronJob;0;0;2;-1;-1;-1;false;true;-1
