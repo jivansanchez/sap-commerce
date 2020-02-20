@@ -61,5 +61,17 @@
 			</attributes>
 		</itemtype>
 
+		<itemtype code="CaceledOrderRemovalCronJob" autocreate="true"
+				  generate="true" extends="CronJob"
+				  jaloclass="de.hybris.training.jalo.CaceledOrderRemovalCronJob">
+			<attributes>
+				<attribute type="BaseSiteCollection" qualifier="sites">
+					<modifiers/>
+					<persistence type="property"/>
+					<description>BaseSites for which old carts should be removed</description>
+				</attribute>
+			</attributes>
+		</itemtype>
+
 	</itemtypes>
 </items>

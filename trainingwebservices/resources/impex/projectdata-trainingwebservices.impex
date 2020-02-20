@@ -26,3 +26,17 @@ INSERT_UPDATE Trigger;cronJob(code)[unique=true];second;minute;hour;day;month;ye
 # This is only sample cron job but to make it work correctly you need to set also sites property for it
 INSERT_UPDATE OldCartRemovalCronJob;code[unique=true];job(code);cartRemovalAge;anonymousCartRemovalAge;sessionLanguage(isoCode)[default=en]
 ;oldCartRemovalCronJob;oldCartRemovalJob;2419200;1209600
+
+
+# Canceled Order Cleanup Job
+INSERT_UPDATE ServicelayerJob;code[unique=true];springId
+                             ;cancelledOrdersRemovalJob;cancelledOrdersRemovalJob
+
+# Canceled Order Cleanup CronJobs
+# This is only sample cron job but to make it work correctly you need to set also sites property for it
+INSERT_UPDATE CaceledOrderRemovalCronJob;code[unique=true];job(code);sessionLanguage(isoCode)[default=en]
+                                   ;caceledOrderRemovalCronJob;cancelledOrdersRemovalJob
+
+# The Trigger, specifying the cron expression (each 2 hours, every day)
+INSERT_UPDATE Trigger;cronjob(code)[unique=true];cronExpression
+                     ;caceledOrderRemovalCronJob; 0 0 0/2 * * ?

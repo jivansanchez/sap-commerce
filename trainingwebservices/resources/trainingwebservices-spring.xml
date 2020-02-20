@@ -261,4 +261,9 @@
     <bean id="defaultOrderCodeIdentificationStrategy" class="de.hybris.training.strategies.impl.DefaultOrderCodeIdentificationStrategy">
         <property name="idPattern" value="[0-9a-f]{40}|[0-9a-f-]{36}"/>
     </bean>
+
+	<bean id="cancelledOrdersRemovalJob" class="de.hybris.training.cronjob.CancelledOrdersRemovalJob"
+		  parent="abstractJobPerformable">
+		<property name="commerceOrderDao" ref="commerceOrderDao"/>
+	</bean>
 </beans>
